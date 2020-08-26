@@ -1,6 +1,7 @@
 # Typescript Workshop
 
 First challenge is to convert Cat Fact! app to typescript located in cat-fact-app folder
+Second challenge is to convert Input component without declaring new interfaces
 
 ## Setup
 
