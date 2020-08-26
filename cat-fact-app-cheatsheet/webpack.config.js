@@ -35,7 +35,7 @@ const config = {
     new CleanWebpackPlugin(),
 
     new HtmlWebpackPlugin({
-      title: 'typescript workshop',
+      title: 'Cat Fact!',
       template: './src/index.html',
       filename: './index.html',
     }),
