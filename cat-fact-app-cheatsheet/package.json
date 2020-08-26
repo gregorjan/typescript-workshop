@@ -4,7 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "check-types": "tsc",
     "start": "cross-env NODE_ENV=development webpack-dev-server --color --progress  --config ./webpack.config.js",
     "build": "cross-env NODE_ENV=production webpack --color --progress",
     "serve": "serve dist"
