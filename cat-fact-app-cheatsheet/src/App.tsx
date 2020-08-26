@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Button, ButtonSize } from './components/Button'
+import { Input } from './components/Input'
 import { useCatFacts } from './hooks/useCatFacts'
 
 declare global {
@@ -9,9 +10,13 @@ declare global {
 }
 
 export const App = () => {
-  const { loading, error, changeCatFact, catFact } = useCatFacts()
-
+  const { loading, error, ready, changeCatFact, catFact } = useCatFacts()
+  const [searchValue, setSearchValue] = useState('')
   const [displayedCatFact, setDisplayedCatFact] = useState<string | null>(null)
+
+  useEffect(() => {
+    ready && changeCatFact()
+  }, [ready])
 
   useEffect(() => {
     setDisplayedCatFact(catFact)
@@ -32,6 +37,7 @@ export const App = () => {
       >
         Window Cat Fact!
       </Button>
+      <Input value={searchValue} onChange={e => setSearchValue(e.target.value)} />
     </div>
   )
 }
